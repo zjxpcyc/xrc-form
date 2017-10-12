@@ -1,0 +1,60 @@
+{
+  "name": "xrc-form",
+  "version": "0.0.1",
+  "description": "基于 rc-form, 结合 antd 快速进行 react 表单开发",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "prepare": "babel src -d lib --copy-files",
+    "test": "mocha --require babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zjxpcyc/xrc-form.git"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-2",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "invariant": "^2.2.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "jsdom": "^11.3.0",
+    "mocha": "^4.0.1",
+    "rc-form": "^1.4.8",
+    "react-test-renderer": "^15.6.2",
+    "sinon": "^4.0.1"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "rc-form"
+  ],
+  "author": "yansen",
+  "license": "MIT"
+}

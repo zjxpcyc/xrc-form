@@ -1,0 +1,25 @@
+
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.title {
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 2rem;
+  border-bottom: .01rem solid #eee;
+}
+
+
+.list {
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+.list code {
+  background: #f7f7f7;
+}
