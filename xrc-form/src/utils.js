@@ -1,9 +1,13 @@
-import invariant from 'invariant';
 
 // pick get attrs values from object o
 export const pick = (o, attrs) => {
-  invariant((typeof o === 'object'), 'The 1st param of pick function must be an object');
-  invariant(Array.isArray(attrs), 'The 2nd param of pick function must be an array');
+  if (typeof o !== 'object') {
+    throw new Error('The 1st param of pick function must be an object');
+  }
+
+  if (!Array.isArray(attrs)) {
+    throw new Error('The 2nd param of pick function must be an array');
+  }
 
   return Object.keys(o).reduce((acc, it) => {
     if (attrs.indexOf(it) > -1) {
@@ -16,8 +20,13 @@ export const pick = (o, attrs) => {
 
 // twoPart split object o to two parts
 export const twoPart = (o, attrs) => {
-  invariant((typeof o === 'object'), 'The 1st param of twoPart function must be an object');
-  invariant(Array.isArray(attrs), 'The 2nd param of twoPart function must be an array');
+  if (typeof o !== 'object') {
+    throw new Error('The 1st param of pick function must be an object');
+  }
+
+  if (!Array.isArray(attrs)) {
+    throw new Error('The 2nd param of pick function must be an array');
+  }
 
   const has = {};
   const nohas = {};
@@ -32,6 +41,5 @@ export const twoPart = (o, attrs) => {
 
   return [has, nohas];
 };
-
 
 export const keyGen = p => `xrc-form-${p}`;

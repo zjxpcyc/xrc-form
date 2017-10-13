@@ -32,7 +32,7 @@ describe('1 <FormBody />', () => {
         options: {
           rules: [{
             required: true,
-            message: '请选择甲方',
+            message: '请填写用户名',
           }],
         },
       },
@@ -43,12 +43,11 @@ describe('1 <FormBody />', () => {
         options: {
           rules: [{
             required: true,
-            message: '请选择甲方',
+            message: '请填写密码',
           }],
         },
       },
       {
-        pure: true,
         element: <button>登录</button>,
       },
     ];

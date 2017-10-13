@@ -5,11 +5,11 @@ import { keyGen } from './utils';
 
 class FormBody extends React.Component {
   renderRow = (row, rowNo) => {
-    const { wrapCol: Col, form, wrapItem } = this.props;
+    const { wrapCol: Col, form, wrapItem: wrap } = this.props;
     const cols = !Array.isArray(row) ? [row] : row;
 
     return cols.map((col, inx) => {
-      const props = { form, wrap: wrapItem, ...col };
+      const props = { form, wrap, ...col };
 
       if (Col) {
         return (

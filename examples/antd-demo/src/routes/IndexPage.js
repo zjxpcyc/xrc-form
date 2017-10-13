@@ -72,7 +72,6 @@ const UserLogIn = Form.create()((props) => {
       },
     },
     {
-      pure: true,
       element: <Button type="primary" htmlType="submit">登录</Button>,
     },
   ];

@@ -53,7 +53,6 @@ const UserLogIn = createForm()((props) => {
       },
     },
     {
-      pure: true,
       element: <Button type="primary" onClick={handleSubmit}>登录</Button>,
     },
   ];
