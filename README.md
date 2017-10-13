@@ -2,7 +2,7 @@
 
 这是一个 react 项目, 结合 [antd](https://ant.design/) 和 [antd-mobile](https://mobile.ant.design/) 可以用于快速表单开发。
 
-项目依赖 [rc-form](https://github.com/react-component/form) , 如果不是用于 antd 或 antd-mobile 项目, 那么需要安装这个依赖 `npm install xrc-form --save` 。
+项目依赖 [rc-form](https://github.com/react-component/form) , 如果不是用于 antd 或 antd-mobile 项目, 那么需要安装这个依赖 `npm install rc-form --save` 。
 
 ## 概要 (Summary)
 xrc-form 只是一个简单的 form 字段组合操作, 没有过多的内置行为。它包含两个组件:
