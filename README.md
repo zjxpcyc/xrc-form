@@ -1,5 +1,7 @@
 # xrc-form
 
+[![Travis](https://img.shields.io/travis/zjxpcyc/xrc-form.svg)](https://travis-ci.org/zjxpcyc/xrc-form)
+
 这是一个 react 项目, 结合 [antd](https://ant.design/) 和 [antd-mobile](https://mobile.ant.design/) 可以用于快速表单开发。
 
 项目依赖 [rc-form](https://github.com/react-component/form) , 如果不是用于 antd 或 antd-mobile 项目, 那么需要安装这个依赖 `npm install rc-form --save` 。
