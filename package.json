@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha --require babel-core/register"
+    "test": "./node_modules/.bin/mocha --require babel-core/register"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
