@@ -5,5 +5,7 @@ node_js:
   - "7"
   - "8"
 
+
+
 before_script:
-  - cd xrc-form
+  - ls -l ./node_modules && cd xrc-form
