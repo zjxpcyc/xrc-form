@@ -1,6 +1,7 @@
 # xrc-form
 
 [![Travis](https://img.shields.io/travis/zjxpcyc/xrc-form.svg)](https://travis-ci.org/zjxpcyc/xrc-form)
+[![codecov](https://codecov.io/gh/zjxpcyc/xrc-form/branch/master/graph/badge.svg)](https://codecov.io/gh/zjxpcyc/xrc-form)
 
 这是一个 react 项目, 结合 [antd](https://ant.design/) 和 [antd-mobile](https://mobile.ant.design/) 可以用于快速表单开发。
 
