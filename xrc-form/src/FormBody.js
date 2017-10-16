@@ -11,17 +11,15 @@ class FormBody extends React.Component {
     return cols.map((col, inx) => {
       const props = { form, wrap, ...col };
 
-      if (Col) {
-        return (
+      return Col ?
+        (
           <Col key={keyGen(`col-${rowNo}-${inx}`)}>
             <FormItem {...props} />
           </Col>
+        ) :
+        (
+          <FormItem key={keyGen(`col-${rowNo}-${inx}`)} {...props} />
         );
-      }
-
-      return (
-        <FormItem key={keyGen(`col-${rowNo}-${inx}`)} {...props} />
-      );
     });
   }
 
@@ -32,15 +30,12 @@ class FormBody extends React.Component {
       <div>
         {
           items.map((row, inx) => {
-            if (Row) {
-              return (
+            return Row ?
+              (
                 <Row key={keyGen(`row-${inx}`)}>
                   {this.renderRow(row, inx)}
                 </Row>
-              );
-            }
-
-            return this.renderRow(row, inx);
+              ) : this.renderRow(row, inx);
           })
         }
       </div>

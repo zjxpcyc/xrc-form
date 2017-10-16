@@ -10,9 +10,45 @@ import FormBody from '../src';
 
 configure({ adapter: new Adapter() });
 
+const Row = (props) => (<div {...props}>{props.children}</div>);
+const Col = (props) => (<div {...props}>{props.children}</div>);
 const Item = (props) => (<label>{props.label}{props.children}</label>);
 const Name = (props) => (<input type="text" {...props} />);
 const Passwd = (props) => (<input type="password" {...props} />);
+
+const formFields = [
+  {
+    label: '用户名',
+    name: 'user',
+    element: Name,
+    options: {
+      rules: [{
+        required: true,
+        message: '请填写用户名',
+      }],
+    },
+  },
+  {
+    label: '密码',
+    name: 'password',
+    element: <Passwd />,
+    options: {
+      rules: [{
+        required: true,
+        message: '请填写密码',
+      }],
+    },
+  },
+  {
+    name: 'token',
+    options: {
+      initialValue: Math.random().toString(36).substr(2),
+    },
+  },
+  {
+    element: <button>登录</button>,
+  },
+];
 
 describe('1 <FormBody />', () => {
   it('1.1 FormBody can shallow successfully', () => {
@@ -24,37 +60,26 @@ describe('1 <FormBody />', () => {
   it('1.2 FormBody can render with items successfully', () => {
     const Form = createForm()(FormBody);
 
-    const items = [
-      {
-        label: '用户名',
-        name: 'user',
-        element: Name,
-        options: {
-          rules: [{
-            required: true,
-            message: '请填写用户名',
-          }],
-        },
-      },
-      {
-        label: '密码',
-        name: 'password',
-        element: <Passwd />,
-        options: {
-          rules: [{
-            required: true,
-            message: '请填写密码',
-          }],
-        },
-      },
-      {
-        element: <button>登录</button>,
-      },
-    ];
-
     const formProps = {
       wrapItem: Item,
-      items,
+      items: formFields,
+    };
+
+    const wrapper = mount(<Form {...formProps} />);
+
+    expect(wrapper.find({ name: 'user' })).to.have.length(1);
+    expect(wrapper.find({ name: 'password' })).to.have.length(1);    
+    expect(wrapper.find('button')).to.have.length(1);
+  });
+  
+  it('1.3 FormBody can render with item wrapper successfully', () => {
+    const Form = createForm()(FormBody);
+
+    const formProps = {
+      wrapRow: Row,
+      wrapCol: Col,
+      wrapItem: Item,
+      items: formFields,
     };
 
     const wrapper = mount(<Form {...formProps} />);

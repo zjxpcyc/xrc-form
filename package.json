@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require babel-core/register xrc-form/test/*.test.js"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --require babel-core/register xrc-form/test/*.test.js",
+    "report-coverage": "./node_modules/.bin/nyc report --reporter=lcov > coverage.lcov && ./node_modules/.bin/codecov"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
@@ -15,6 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
+    "codecov": "^2.3.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-15": "^1.0.1",
     "eslint": "^3.12.2",
@@ -23,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0",
     "jsdom": "^11.3.0",
+    "nyc": "^11.2.1",
     "mocha": "^4.0.1",
     "rc-form": "^1.4.8",
     "react-test-renderer": "^15.6.2",
